@@ -9,7 +9,7 @@ var myApp = angular.module('MyApp', []);
   //Making a Post Call on submit
   $scope.onsubmit = function() {
     console.log("in submit");
-    $http.post("http://localhost:8000/sample",{"userData": "<div> Hey this is your new PDF</div>"}).then(function(data) {
+    $http.post("/sample",{"userData": "<div> Hey this is your new PDF</div>"}).then(function(data) {
       console.log(data);
       var downloadElement = document.getElementById('downloadPdf');   
       
@@ -22,7 +22,7 @@ var myApp = angular.module('MyApp', []);
   //Making a Get Call Hardcoding the HTML in app.js file
   /*$scope.onsubmit = function() {
     console.log("in submit");
-     $http.get("http://localhost:8000/firstPage").then(function(data) {
+     $http.get("/firstPage").then(function(data) {
         console.log(data);
         var downloadElement = document.getElementById('downloadPdf');
       
