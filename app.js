@@ -5,6 +5,9 @@ var express = require('express'),
     htmlToPdf = require('html-to-pdf'),
     bodyParser = require('body-parser');
 
+
+var port = process.env.port || 1337;
+
 // __dirname will use the current path from where you run this file 
 app.use(express.static(__dirname));
 
@@ -13,8 +16,8 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //Server Running Port: 8000
-app.listen(8000);
-console.log('Listening on port 8000');
+app.listen(port);
+console.log('Listening on port '+port);
 
 app.set('view engine', 'html');
 
