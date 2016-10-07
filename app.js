@@ -6,7 +6,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 
-var port = process.env.PORT||443; //which you can run both on Azure or local
+var port = process.env.PORT||3000; //which you can run both on Azure or local
 
 // __dirname will use the current path from where you run this file 
 app.use(express.static(__dirname));
