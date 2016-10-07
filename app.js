@@ -24,7 +24,7 @@ app.set('view engine', 'html');
 
 var currentFile = 'newFile_' + new Date().getTime() + '.pdf';
 //Call this post method with req.body.userData(HTMLString)
-app.post('https://htmltopdfconverter.azurewebsites.net/sample', function (req,res) {
+app.post('/sample', function (req,res) {
     console.log("Logged User Data:::", req.body);
    
       var newData = req.body.userData;
