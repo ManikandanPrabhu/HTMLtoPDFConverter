@@ -7,14 +7,17 @@ var express = require('express'),
 
 
 var port = process.env.PORT||3000; //which you can run both on Azure or local
-var server = app.listen(process.env.PORT||3000);;
+
+console.log(port);
 
 // __dirname will use the current path from where you run this file 
 app.use(express.static(__dirname));
-
+console.log("express executed");
 // Use Body Parser
 app.use(bodyParser.json()); // support json encoded bodies
+console.log("bodyParser.json executed");
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+console.log("bodyParser.urlencoded executed");
 
 //Server Running Port: 8000
 app.listen(port);
