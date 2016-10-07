@@ -6,18 +6,13 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 
-var port = process.env.PORT||3000; //which you can run both on Azure or local
-
-console.log(port);
+var port = process.env.PORT||80; //which you can run both on Azure or local
 
 // __dirname will use the current path from where you run this file 
 app.use(express.static(__dirname));
-console.log("express executed");
 // Use Body Parser
 app.use(bodyParser.json()); // support json encoded bodies
-console.log("bodyParser.json executed");
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-console.log("bodyParser.urlencoded executed");
 
 //Server Running Port: 8000
 app.listen(port);
@@ -29,7 +24,7 @@ app.set('view engine', 'html');
 
 var currentFile = 'newFile_' + new Date().getTime() + '.pdf';
 //Call this post method with req.body.userData(HTMLString)
-app.post('/sample', function (req,res) {
+app.post('https://htmltopdfconverter.azurewebsites.net/sample', function (req,res) {
     console.log("Logged User Data:::", req.body);
    
       var newData = req.body.userData;
