@@ -22,29 +22,32 @@ app.set('view engine', 'html');
 
 
 
-var currentFile = 'newFile_' + new Date().getTime() + '.pdf';
+//var currentFile = 'newFile_' + new Date().getTime() + '.pdf';
 //Call this post method with req.body.userData(HTMLString)
 app.post('/sample', function (req,res) {
     console.log("Logged User Data:::", req.body);
+    var currentFile = 'newFile_' + new Date().getTime() + '.pdf';
    
       var newData = req.body.userData;
+
+      var readData = fs.readFileSync(sample.pdf, 'base64');
+                res.send(readData);
    
-    // Convert HTMLString to PDF
+    /*// Convert HTMLString to PDF
     htmlToPdf.convertHTMLString(newData, currentFile,
         function (error, success) {
             if (error) {
                 console.log(error);
             } else {
                 console.log('Woot! Success!');
-                //var readData = fs.readFileSync(currentFile, 'base64');
-                //res.send(readData);
-                 res.sendFile(path.join(__dirname, 'dummy.html'));
+                var readData = fs.readFileSync(currentFile, 'base64');
+                res.send(readData);
 
                 //To Remove the file from the server Location
-                //fs.unlink(__dirname + '/' + currentFile);
+                fs.unlink(__dirname + '/' + currentFile);
             }
         }
-    );
+    );*/
 });
 
 // Hardcode the HTML data here

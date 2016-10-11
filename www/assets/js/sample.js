@@ -11,11 +11,11 @@ var myApp = angular.module('MyApp', []);
     console.log("in submit");
     $http.post("/sample",{"userData": "<div> Hey this is your new PDF</div>"}).then(function(data) {
       console.log(data);
-      /*var downloadElement = document.getElementById('downloadPdf');   
+      var downloadElement = document.getElementById('downloadPdf');   
       
         downloadElement.href = "data:application/octet-stream;base64, " + data.data;
         downloadElement.download = "notes_" + new Date().getTime() + ".pdf";
-        downloadElement.click();*/
+        downloadElement.click();
     });
   };
 
