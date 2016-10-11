@@ -168,8 +168,9 @@ var rawData = `<h1> Welcome to PDF Conversion </h1>
 </body>`;
 app.get('/firstPage', function(req,res) {
     console.log("firstPage");
+    res.sendFile(path.join(__dirname, 'dummy.html'));
     // Convert HTMLString to PDF
-    htmlToPdf.convertHTMLString(rawData, currentFile,
+    /*htmlToPdf.convertHTMLString(rawData, currentFile,
         function (error, success) {
             if (error) {
                 console.log(error);
@@ -182,7 +183,7 @@ app.get('/firstPage', function(req,res) {
                 fs.unlink(__dirname + '/' + currentFile);
             }
         }
-    );
+    );*/
 });
 
 app.get('/demo', function(req,res) {
