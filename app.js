@@ -36,8 +36,9 @@ app.post('/sample', function (req,res) {
                 console.log(error);
             } else {
                 console.log('Woot! Success!');
-                var readData = fs.readFileSync(currentFile, 'base64');
-                res.send(readData);
+                //var readData = fs.readFileSync(currentFile, 'base64');
+                //res.send(readData);
+                 res.sendFile(path.join(__dirname, 'dummy.html'));
 
                 //To Remove the file from the server Location
                 //fs.unlink(__dirname + '/' + currentFile);
