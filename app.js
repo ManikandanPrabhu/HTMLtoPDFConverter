@@ -40,7 +40,7 @@ app.post('/sample', function (req,res) {
                 res.send(readData);
 
                 //To Remove the file from the server Location
-                fs.unlink(__dirname + '/' + currentFile);
+                //fs.unlink(__dirname + '/' + currentFile);
             }
         }
     );
